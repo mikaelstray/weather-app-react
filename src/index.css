@@ -1,0 +1,70 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6dd5fa, #2980b9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input, select, button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+    font-size: 1em;
+}
+
+input {
+    width: 200px;
+}
+
+select {
+    width: 150px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.error {
+    color: #ffcccb;
+    margin-top: 20px;
+}
+
+.weather-data {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.weather-data h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.weather-data p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.unitChooser {
+    text-align: right;
+}
