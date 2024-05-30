@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
     import React, {useState} from 'react';
     import axios from 'axios';
 
@@ -5,7 +6,7 @@
         const [city, setCity] = useState('');
         const [unit, setUnit] = useState('metric');
         const [weatherData, setWeatherData] = useState(null);
-        const [error, setError] = useState('');
+        const [error, setError] = useState(false);
 
         const fetchWeather = async () => {
             try {
@@ -13,14 +14,14 @@
                 const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`);
                 if (response) {
                     setWeatherData(response.data);
-                    setError('');
+                    setError(false);
                     console.log("ok")
                 } else {
                     console.log("fetch ok but http fail")
                 }
             } catch (error) {
                 console.log("promise failed")
-                setError('Could not fetch weather data. Please check the city name.');
+                setError(true);
                 setWeatherData(null);
             }
         };
@@ -36,7 +37,7 @@
                     onChange={(e) => setCity(e.target.value)}
                 />
                 <button onClick={fetchWeather}>Get Weather</button>
-                {error && <p className="error">{error}</p>}
+                {error && <p className="error">{"No city was found"}</p>}
                 {weatherData && (
                     <div className="weather-data">
                         <h2>{weatherData.name}</h2>

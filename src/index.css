@@ -46,6 +46,7 @@ button:hover {
 .error {
     color: #ffcccb;
     margin-top: 20px;
+    text-align: center;
 }
 
 .weather-data {
